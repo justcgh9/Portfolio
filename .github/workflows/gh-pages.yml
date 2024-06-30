@@ -25,7 +25,9 @@ jobs:
         run: npm run build
         
       - name: Fix Deployment .gitignore
-        run: sed -i '/^dist$/d' .gitignore
+        run: |
+            sed -i '/^dist$/d' .gitignore
+            printf ".github/workflows\npackage-lock.json\npackage.json\nrollup.config.mjs\ntsconfig.json" >> .gitignore
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -33,7 +35,7 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
-          exclude_assets: 'tsconfig.json, rollup.config.mjs, package.json, package-lock.json'
+
           
           
 
