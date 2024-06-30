@@ -1,3 +1,5 @@
+import { formatDistanceToNow } from 'date-fns';
+
 interface ComicData {
     alt: string;
     day: number;
@@ -20,23 +22,31 @@ async function fetchComic(): Promise<undefined> {
     loadingCircle.style.display = 'block'; 
 
     try {
-        const idResponse = await fetch(idUrl) as Response;
+        const idResponse: Response = await fetch(idUrl);
         if (!idResponse.ok) throw new Error('Failed to fetch comic ID');
-        const comicId = await idResponse.text() as string;
+        const comicId: string = await idResponse.text();
 
         const comicUrl = `https://fwd.innopolis.university/api/comic?id=${comicId}`;
-        const comicResponse = await fetch(comicUrl) as Response;
+        const comicResponse: Response = await fetch(comicUrl);
         if (!comicResponse.ok) throw new Error('Failed to fetch comic details');
-        const comicData = await comicResponse.json() as ComicData;
+        const comicData: ComicData = await comicResponse.json();
         console.log(comicData)
 
-        document.getElementById('comic-title')!.textContent = comicData.safe_title;
+        const myTitle: HTMLElement | null = document.getElementById('comic-title')
+        myTitle!.textContent = comicData.safe_title;
         console.log(comicData.safe_title);
-        const comicImg = document.getElementById('comic-img') as HTMLImageElement;
-        comicImg.src = comicData.img;
-        comicImg.alt = comicData.alt;
-        const uploadDate = new Date(comicData.year, comicData.month - 1, comicData.day);
-        document.getElementById('comic-date')!.textContent = uploadDate.toLocaleDateString();
+
+        const comicImg: HTMLImageElement = document.getElementById('comic-img') as HTMLImageElement;
+        comicImg!.src = comicData.img;
+        comicImg!.alt = comicData.alt;
+
+        const uploadDate: Date = new Date(comicData.year, comicData.month - 1, comicData.day);
+        const myDate: HTMLElement | null = document.getElementById('comic-date')
+        myDate!.textContent = uploadDate.toLocaleDateString();
+
+
+        const myReleased : HTMLElement | null = document.getElementById('comic-release')
+        myReleased!.textContent = "Released " + formatDistanceToNow(uploadDate);
 
     } catch (error) {
         console.error(error);

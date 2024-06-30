@@ -18,5 +18,8 @@
     "rollup": "^2.79.1",
     "typescript": "^5.5.2"
   },
+  "dependencies": {
+    "date-fns": "^3.6.0"
+  },
   "keywords": []
 }
