@@ -24,8 +24,8 @@ jobs:
       - name: Build the project
         run: npm run build
         
-      - name: List files after build
-        run: ls -l
+      - name: Remove gitignore
+        run: rm .gitignore
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -35,5 +35,5 @@ jobs:
           publish_branch: gh-pages   
           keep_files: true
           
-      - name: List files after deploy
-        run: ls -l
+          
+
