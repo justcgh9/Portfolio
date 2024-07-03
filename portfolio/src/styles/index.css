@@ -1,0 +1,20 @@
+body {
+
+    background: url('../assets/photos/background-img.jpg') center/cover no-repeat fixed;
+    font-family: 'league gothic', helvetica, serif;
+    color: #F9FBF8;
+    transition: background-position 1s ease-in-out;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#rectangle {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 55%;
+    height: 125vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
