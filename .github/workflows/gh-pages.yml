@@ -21,6 +21,11 @@ jobs:
       - name: Change dir
         run: cd portfolio
 
+      - name: sysinfo
+        run: |
+          pwd
+          ls -R
+
       - name: Install dependencies
         run: npm install
 
