@@ -12,7 +12,8 @@ export default function Home() {
       <Header></Header>
       <div className="main">
         <Navigation></Navigation>
-        <Content></Content>
+        <Content>
+        </Content>
         
       </div>
       <Footer/>

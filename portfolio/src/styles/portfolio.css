@@ -1,0 +1,29 @@
+.info {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.info.show {
+    animation: slideIn 1s forwards;
+    display: flex;
+}
+
+.info.hide {
+    animation: slideOut 1s forwards;
+    display: none;
+}
+
+#info-portfolio {
+    width: 100%;
+    margin: 4%;
+}
+
+.portfolio_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}

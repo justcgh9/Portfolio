@@ -4,6 +4,7 @@ import img2 from '../assets/photos/img1.jpg';
 import img3 from '../assets/photos/img2.jpg';
 import img0 from '../assets/photos/img3.jpg';
 import Image from 'next/image';
+import '../styles/photos.css'
 
 const Photos: React.FC = () => {
   const [photoIndex, setPhotoIndex] = useState<number>(0);
@@ -13,7 +14,7 @@ const Photos: React.FC = () => {
   const nextPhoto = () => setPhotoIndex((photoIndex + 1) % photos.length);
 
   return (
-    <div className="flex" id="info-photo">
+    <div className="info hide" id="info-photo">
       <div className="gallery_cont">
         <div className="flex justify-center items-center gap-[2%] p-0">
           <button id="prev_btn" className="text-[#F9FBF8] text-[30px] w-[10%] border-none cursor-pointer bg-transparent h-fit-content m-0 z-30" onClick={prevPhoto}>&#10094;</button>

@@ -2,6 +2,12 @@ export interface NavigationElementProps {
     text: string
 }
 
+export interface PortfolioCardProps {
+    title: string;
+    img: string;
+    alt: string;
+    description: string;
+}
 
 
 export interface ComicData {
