@@ -27,11 +27,7 @@ jobs:
         run: |
           cd portfolio
           npm run build
-        
-      - name: Export website
-        run: |
-          cd portfolio
-          npm run export
+
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
