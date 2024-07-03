@@ -18,28 +18,26 @@ jobs:
         with:
           node-version: 20
 
-      - name: Change dir
-        run: cd portfolio
-
-      - name: sysinfo
-        run: |
-          pwd
-          ls -R
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd portfolio
+          npm install
 
       - name: Build the project
-        run: npm run build
+        run: |
+          cd portfolio
+          npm run build
         
       - name: Export website
-        run: npm run export
+        run: |
+          cd portfolio
+          npm run export
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./portfolio/out
           publish_branch: gh-pages
 
           
