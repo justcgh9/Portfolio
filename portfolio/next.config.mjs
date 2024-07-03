@@ -4,6 +4,7 @@ const nextConfig = {
     basePath: '/Portfolio', 
     assetPrefix: '/Portfolio',
     images: {
+        unoptimized: true,
         remotePatterns: [
           {
             protocol: 'https',
