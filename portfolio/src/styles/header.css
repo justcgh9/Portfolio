@@ -1,0 +1,14 @@
+#name {
+    width: fit-content;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.text_shifted {
+    width: 55%;
+    margin-right: 5%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+  }
