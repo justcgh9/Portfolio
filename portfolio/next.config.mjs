@@ -2,7 +2,7 @@
 const nextConfig = {
     output: 'export',
     basePath: '/Portfolio', 
-    assetPrefix: 'https://github.com/justcgh9/Portfolio/tree/gh-pages',
+    assetPrefix: '/Portfolio',
     images: {
         remotePatterns: [
           {
