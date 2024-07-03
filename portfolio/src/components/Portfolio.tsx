@@ -6,17 +6,9 @@ import aImg from '../assets/photos/A4A.svg'
 import jsonImg from '../assets/photos/json2video.svg'
 import PortfolioCard from "./PortfolioCard";
 import '../styles/portfolio.css'
+import { ContentChildrenProps } from "../types";
 
-export default function Portfolio() {
-
-    const scrollRef = useRef<HTMLDivElement>(null);
-
-    const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-        if (scrollRef.current) {
-          const { current } = scrollRef;
-          current.scrollTop += event.deltaY;
-        }
-      };
+const Portfolio: React.FC<ContentChildrenProps> = function ({active}: ContentChildrenProps) {
 
     const myProjects = [
         {
@@ -29,7 +21,7 @@ export default function Portfolio() {
             title: 'MatriKZ',
             img: matrixImg,
             alt: 'Matrix Image',
-            description: 'Mobile application for matrix operations'
+            description: 'Mobile application for matrix operations, which include Inverses, Systems of linear equations, etc.'
         },
         {
             title: 'A4A',
@@ -46,7 +38,9 @@ export default function Portfolio() {
     ]
 
 
-    return <div id="info-portfolio" className="info show" ref={scrollRef} onWheel={handleWheel}> 
+    return <div id="info-portfolio" className={"info " + (active ? "show" : "hide")} > 
         <div className="portfolio_content">{myProjects.map((item) => <PortfolioCard title={item.title} description={item.description} img={item.img} alt={item.alt}/>)}</div>
     </div>
 }
+
+export default Portfolio;

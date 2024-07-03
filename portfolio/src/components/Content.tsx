@@ -5,13 +5,16 @@ import '../styles/content.css'
 import Portfolio from "./Portfolio";
 import ComicBtn from "./ComicBtn";
 import Contacts from "./Contacts";
+import { ContentProps } from "@/types";
 
-export default function Content() {
+export default function Content({active}: ContentProps){
+    
+
     return <section className='content'>
-        <About/>
-        <PhotosCarousel/>   
-        <Portfolio/>
-        <Contacts/>
-        <ComicBtn/>
+        <About active={active === 'About me'}/>
+        <PhotosCarousel active={active === 'Photos'}/>   
+        <Portfolio active={active === 'Portfolio'}/>
+        <Contacts active={active === 'Contact Me'}/>
+        <ComicBtn active={active === 'Comic'}/>
     </section>
 }

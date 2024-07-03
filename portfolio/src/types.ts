@@ -1,5 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface NavigationElementProps {
-    text: string
+    text: string;
+    setActive: Dispatch<SetStateAction<string>>;
 }
 
 export interface PortfolioCardProps {
@@ -9,6 +12,17 @@ export interface PortfolioCardProps {
     description: string;
 }
 
+export interface NavigationProps {
+    setActive: Dispatch<SetStateAction<string>>
+}
+
+export interface ContentProps {
+    active: string;
+}
+
+export interface ContentChildrenProps {
+    active: boolean;
+}
 
 export interface ComicData {
     alt: string;

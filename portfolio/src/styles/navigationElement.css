@@ -1,0 +1,9 @@
+.menu:hover a:not(:hover) {
+    transform: scale(0.95);
+    opacity: 0.5;
+}
+
+.menu a:hover {
+    transform: scale(1);
+    opacity: 1;
+}
