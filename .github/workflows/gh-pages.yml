@@ -18,22 +18,23 @@ jobs:
         with:
           node-version: 20
 
+      - name: Change dir
+        run: cd portfolio
+
       - name: Install dependencies
         run: npm install
 
       - name: Build the project
         run: npm run build
         
-      - name: Fix Deployment .gitignore
-        run: |
-            sed -i '/^dist$/d' .gitignore
-            printf ".github/workflows\npackage-lock.json\npackage.json\nrollup.config.mjs\ntsconfig.json" >> .gitignore
+      - name: Export website
+        run: npm run export
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: .
+          publish_dir: ./out
           publish_branch: gh-pages
 
           
