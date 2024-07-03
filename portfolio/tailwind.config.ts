@@ -9,20 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'league-gothic': ['league gothic', 'helvetica', 'serif'],
+        "league-gothic": ["league gothic", "helvetica", "serif"],
       },
       colors: {
-        'custom-white': '#F9FBF8',
+        "custom-white": "#F9FBF8",
       },
       backgroundImage: {
-        'custom-bg': "url('../assets/photos/background-img.jpg')",
+        "custom-bg": "url('../assets/photos/background-img.jpg')",
       },
       transitionProperty: {
-        'background-position': 'background-position',
+        "background-position": "background-position",
       },
       backgroundPosition: {
-        'center-45': 'center 45%',
-      }
+        "center-45": "center 45%",
+      },
     },
   },
   plugins: [],
