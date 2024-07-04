@@ -25,6 +25,7 @@ jobs:
 
       - name: Run linter and formatter
         run: |
+          cd portfolio
           npm run lint 
           npm run format
 
