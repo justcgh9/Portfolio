@@ -23,14 +23,15 @@ jobs:
           cd portfolio
           npm install
 
+      - name: Run linter and formatter
+        run: |
+          npm run lint 
+          npm run format
+
       - name: Build the project
         run: |
           cd portfolio
           npm run build
-
-
-
-
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

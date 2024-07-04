@@ -1,61 +1,61 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-    width: 88%;
-    padding: 8% 5.5%;
-    background-color: #F9FBF8;
-    border: 1px solid #ccc;
-    text-align: center;
-    font-size: 24px;
-    border-radius: 2%;
-    height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  width: 88%;
+  padding: 8% 5.5%;
+  background-color: #f9fbf8;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 2%;
+  height: fit-content;
 }
 
 .card_title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 4%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 4%;
 }
 
 .titleoftheproject {
-    color: #281600;
-    text-align: left;
-    font-size: 32px;
-    border-style: hidden;
-    outline: none;
-    font-weight: 400;
-    margin: 0;
+  color: #281600;
+  text-align: left;
+  font-size: 32px;
+  border-style: hidden;
+  outline: none;
+  font-weight: 400;
+  margin: 0;
 }
 
 .card_content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  padding: 0;
 }
 
 .card_image {
-    aspect-ratio: 5 / 4;
-    width: 100%;
+  aspect-ratio: 5 / 4;
+  width: 100%;
 }
 
 .card_description {
   padding-top: 3.5%;
-    color: #409919;
-    text-align: left;
-    font-size: 20px;
-    border-style: hidden;
-    outline: none;
-    width: 100%;
-    word-wrap: break-word;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  color: #409919;
+  text-align: left;
+  font-size: 20px;
+  border-style: hidden;
+  outline: none;
+  width: 100%;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
