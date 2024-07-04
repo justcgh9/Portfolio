@@ -18,7 +18,7 @@ const Photos: React.FC<ContentChildrenProps> = ({
   const nextPhoto = () => setPhotoIndex((photoIndex + 1) % photos.length);
 
   return (
-    <div className={'info ' + (active ? "show" : "hide")} id="info-photo">
+    <div className={'info ' + (active ? "show" : 'hide')} id="info-photo">
       <div className="gallery_cont">
         <div className="flex justify-center items-center gap-[2%] p-0">
           <button
