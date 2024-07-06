@@ -1,0 +1,24 @@
+.comic-main-container {
+    width: 55%;
+    margin: 10% 5% auto auto;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+#comic-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+#comic-title {
+    font-size: 32px;
+}
+
+.comic-date-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

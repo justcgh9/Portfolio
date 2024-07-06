@@ -37,3 +37,8 @@ export interface ComicData {
   transcript: string;
   year: number;
 }
+
+export interface HeaderButtonProps {
+  route: string;
+  children: React.ReactNode;
+}

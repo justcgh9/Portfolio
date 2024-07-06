@@ -1,58 +1,39 @@
-"use client";
 import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
 import axios from "axios";
 import { ComicData } from "@/types";
-import { useEffect, useState } from "react";
+import "../../styles/comic.css";
 
-export default function Comic() {
-  const [title, setTitle] = useState<string>("");
-  const [date, setDate] = useState<string>("");
-  const [imgSrc, setImgSrc] = useState<string>("");
-  const [imgAlt, setImgAlt] = useState<string>("");
-  const [released, setReleased] = useState<string>("");
+async function fetchComic() {
+  const email = "a.kabardiyadi@innopolis.university";
+  const response = await axios.get(
+    `https://fwd.innopolis.university/api/hw2?${new URLSearchParams({ email })}`,
+  );
+  const comicId = response.data;
 
-  useEffect(() => {
-    const fetchComic = async () => {
-      try {
-        const email = "a.kabardiyadi@innopolis.university";
-        const response = await axios.get(
-          `https://fwd.innopolis.university/api/hw2?${new URLSearchParams({ email })}`,
-        );
-        const comicId = response.data;
+  const comicResponse = await axios.get(
+    `https://fwd.innopolis.university/api/comic?id=${comicId}`,
+  );
+  const comicData: ComicData = comicResponse.data;
 
-        const comicResponse = await axios.get(
-          `https://fwd.innopolis.university/api/comic?id=${comicId}`,
-        );
-        const comicData: ComicData = comicResponse.data;
-        const date = new Date(
-          comicData.year,
-          comicData.month - 1,
-          comicData.day,
-        );
+  return comicData;
+}
 
-        setTitle(comicData.safe_title);
-        setDate(date.toLocaleDateString());
-        setReleased(formatDistanceToNow(date));
-        setImgAlt(comicData.alt);
-        setImgSrc(comicData.img);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchComic();
-  }, []);
-
+export default async function Comic() {
+  const comics: ComicData = await fetchComic();
+  const date = new Date(comics.year, comics.month - 1, comics.day);
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="comic-main-container">
+      <div id="rectangle"></div>
       <div id="comic-container">
-        <h1 id="comic-title">{title}</h1>
-        <div className="relative h-20">
-          <Image id="comic-img" fill={true} src={imgSrc} alt={imgAlt} />
+        <h1 id="comic-title">{comics.safe_title}</h1>
+        <div className="relative h-80" style={{ width: "45rem" }}>
+          <Image id="comic-img" fill={true} src={comics.img} alt={comics.alt} />
         </div>
-        <p id="comic-date">{date}</p>
-        <p id="comic-release">Released {released}</p>
+        <div className="comic-date-details">
+          <p id="comic-date">{date.toLocaleDateString()}</p>
+          <p id="comic-release">Released {formatDistanceToNow(date)} ago</p>
+        </div>
       </div>
     </div>
   );
