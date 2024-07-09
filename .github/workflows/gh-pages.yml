@@ -32,6 +32,7 @@ jobs:
       - name: Build the project
         run: |
           cd portfolio
+          sed -i '/output: "export",/a\  basePath: "/Portfolio",\n  assetPrefix: "/Portfolio",' next.config.mjs
           npm run build
         
       - name: Deploy to GitHub Pages
