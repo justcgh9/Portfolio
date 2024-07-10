@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/about.css";
+import React from 'react';
+import '../styles/about.css';
 import { ContentChildrenProps } from "@/types";
 
 const About: React.FC<ContentChildrenProps> = ({
