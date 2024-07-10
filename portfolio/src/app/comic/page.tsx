@@ -3,6 +3,12 @@ import { formatDistanceToNow } from "date-fns";
 import axios from "axios";
 import { ComicData } from "@/types";
 import "../../styles/comic.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Comic",
+  description: "Entertainment Comic Page",
+};
 
 async function fetchComic() {
   const email = "a.kabardiyadi@innopolis.university";

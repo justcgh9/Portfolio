@@ -5,8 +5,23 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Alisher Kabardiyadi",
-  description: "Made by justcgh9",
+  title: {
+    template: "%s | justcgh9",
+    default: "Portfolio | justcgh9",
+  },
+  authors: [{ name: "Alisher Kabardiyadi" }],
+  keywords: [
+    "Portfolio",
+    "Front-end",
+    "Frontend",
+    "Alisher",
+    "Kabardiyadi",
+    "Next.js",
+    "React",
+  ],
+  icons: {
+    icon: "@/assets/photos/dino.svg",
+  },
 };
 
 export default function RootLayout({
