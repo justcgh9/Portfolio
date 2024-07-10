@@ -42,6 +42,6 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts": "npm run lint -- --fix --color"
+    "src/**/*.{ts,tsx}": "npm run lint -- --fix --color"
   }
 }
