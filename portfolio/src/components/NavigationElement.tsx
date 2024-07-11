@@ -7,7 +7,7 @@ const NavigationElement: React.FC<NavigationElementProps> = ({
   setActive,
 }: NavigationElementProps) => {
   const func = (text: string) => {
-    console.log(text);
+    // console.log(text);
     setActive(text);
   };
   return (
